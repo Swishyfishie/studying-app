@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect } from 'react'
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
-import Search from './components/layout/Search'
-import Navbar from './components/layout/Navbar'
+import Explanations from './components/Explanations/Explanations'
+import Search from './components/Layout/Search'
+import Navbar from './components/Layout/Navbar'
 
 const App = () => {
 
@@ -14,6 +15,9 @@ const App = () => {
   return (<Fragment>
     <Navbar />
     <Search />
+    <div className="container">
+      <Explanations />
+    </div>
   </Fragment>
   )
 }
