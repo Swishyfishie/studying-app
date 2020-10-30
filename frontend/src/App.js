@@ -1,3 +1,5 @@
+import Navbar from './components/Navbar'
+import Form from './components/Form'
 function App() {
 
   const fetchStuff = () => {
@@ -8,7 +10,9 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <button onClick={fetchStuff}>Fetch stuff</button>
+      <Form />
     </div>
   );
 }
