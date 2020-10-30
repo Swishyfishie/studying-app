@@ -1,20 +1,21 @@
-import Navbar from './components/Navbar'
-import Form from './components/Form'
-function App() {
+import React, { Fragment, useEffect } from 'react'
+import 'materialize-css/dist/css/materialize.min.css'
+import M from 'materialize-css/dist/js/materialize.min.js'
+import Search from './components/layout/Search'
+import Navbar from './components/layout/Navbar'
 
-  const fetchStuff = () => {
-    fetch("http://localhost:3000/users")
-      .then(res => res.json())
-      .then(data => console.log(data))
-  }
+const App = () => {
 
-  return (
-    <div className="App">
-      <Navbar />
-      <button onClick={fetchStuff}>Fetch stuff</button>
-      <Form />
-    </div>
-  );
+
+  useEffect(() => {
+    // Init materialize css
+    M.AutoInit()
+  })
+  return (<Fragment>
+    <Navbar />
+    <Search />
+  </Fragment>
+  )
 }
 
 export default App;
