@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore, compose } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
-import { composeWithDevToos } from 'redux-devtools-extension'
-import { rootReducer } from './Reducers/rootReducer'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import App from './Components/App';
+import { rootReducer } from './Reducers/rootReducer'
 
 
 // store
 
 const store = createStore(
   rootReducer,
-  composeWithDevToos(applyMiddleware(thunk))
+  composeWithDevTools(applyMiddleware(thunk))
 )
 
 ReactDOM.render(
