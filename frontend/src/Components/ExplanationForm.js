@@ -21,6 +21,7 @@ class ExplanationForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.addExplanation(this.state)
+        e.target.reset()
     }
 
     render() {
