@@ -1,9 +1,10 @@
 import React from 'react'
+import ExplanationsContainer from './ExplanationsContainer'
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Hi</h1>
+    <div>
+      <ExplanationsContainer />
     </div>
   );
 }

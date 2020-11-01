@@ -15,8 +15,9 @@ class ExplanationsController < ApplicationController
 
   # POST /explanations
   def create
-    @explanation = Explanation.new(explanation_params)
 
+    @explanation = Explanation.new(explanation_params)
+    @explanation.user_id = 1
     if @explanation.save
       render json: @explanation, status: :created, location: @explanation
     else
