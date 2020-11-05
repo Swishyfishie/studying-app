@@ -3,47 +3,25 @@ import { connect } from 'react-redux'
 import { deleteExplanation } from '../Actions/explanationsActions'
 
 
-// const ExplanationsList = ({ explanations }) => {
-
-
-//     return (
-//         <div>
-//             {/* <ExplanationsContainer /> */}
-//             {explanations.map(exp => {
-//                 return <ul>
-//                     <li >{exp.categories} - {exp.keywords} - {exp.future_studies}</li>
-//                     <button onClick={() => deleteExplanation(exp)}>Button</button>
-//                 </ul>
-//             })}
-//         </div>
-//     )
-// }
-
-class ExplanationsList extends React.Component {
-    constructor(props) {
-        super(props)
-        console.log(this.props + "THISISISISI")
-    }
-
-
-    render() {
-        return (
-            <div>
-                {/* <ExplanationsContainer /> */}
-                {this.props.explanations.map(exp => {
-                    return <ul>
-                        <li >{exp.categories} - {exp.keywords} - {exp.future_studies}</li>
-                        <button onClick={() => this.props.deleteExplanation(exp)}>Button</button>
-                    </ul>
-                })}
-            </div>
-        )
-    }
+const ExplanationsList = ({ explanations, deleteExplanation }) => {
+    console.log(explanations)
+    return (
+        <div>
+            {/* <ExplanationsContainer /> */}
+            {explanations.map(exp => {
+                return <ul>
+                    <li >{exp.categories} - {exp.keywords} - {exp.future_studies}</li>
+                    <button onClick={() => deleteExplanation(exp.id)}>Button</button>
+                </ul>
+            })}
+        </div>
+    )
 }
 
-const mapDispatchToProps = dispatch => ({
-    deleteExplanation: obj => dispatch({ type: 'DELETE_EXPLANATION', obj })
-});
+
+// const mapDispatchToProps = dispatch => ({
+//     deleteExplanation: id => dispatch({ type: 'DELETE_EXPLANATION', id })
+// });
 
 
 function mapStateToProps(state) {
@@ -51,4 +29,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExplanationsList)
+export default connect(mapStateToProps, { deleteExplanation })(ExplanationsList)

@@ -5,10 +5,11 @@ export const explanationsReducer = (state = [], action) => {
             console.log(action.payload)
             return action.payload
         case 'ADD_EXPLANATION':
+
             return [...state, action.payload]
         case 'DELETE_EXPLANATION':
-            debugger
-            console.log(state)
+            return state.filter(exp => exp.id !== action.id);
+
         default:
             return state
     }
