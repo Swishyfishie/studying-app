@@ -1,5 +1,5 @@
 export const explanationsReducer = (state = [], action) => {
-    console.log(action)
+    // console.log(action)
     switch (action.type) {
         case 'FETCH_EXPLANATIONS':
             console.log(action.payload)
@@ -8,7 +8,7 @@ export const explanationsReducer = (state = [], action) => {
             return [...state, action.payload]
         case 'DELETE_EXPLANATION':
             debugger
-            return { explanations: state.explanations.filter(exp => exp.id !== action.payload.id) }
+            console.log(state)
         default:
             return state
     }

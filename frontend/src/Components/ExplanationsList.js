@@ -3,20 +3,42 @@ import { connect } from 'react-redux'
 import { deleteExplanation } from '../Actions/explanationsActions'
 
 
-const ExplanationsList = ({ explanations }) => {
+// const ExplanationsList = ({ explanations }) => {
 
 
-    return (
-        <div>
-            {/* <ExplanationsContainer /> */}
-            {explanations.map(exp => {
-                return <ul>
-                    <li >{exp.categories} - {exp.keywords} - {exp.future_studies}</li>
-                    <button onClick={() => deleteExplanation(exp)}>Button</button>
-                </ul>
-            })}
-        </div>
-    )
+//     return (
+//         <div>
+//             {/* <ExplanationsContainer /> */}
+//             {explanations.map(exp => {
+//                 return <ul>
+//                     <li >{exp.categories} - {exp.keywords} - {exp.future_studies}</li>
+//                     <button onClick={() => deleteExplanation(exp)}>Button</button>
+//                 </ul>
+//             })}
+//         </div>
+//     )
+// }
+
+class ExplanationsList extends React.Component {
+    constructor(props) {
+        super(props)
+        console.log(this.props + "THISISISISI")
+    }
+
+
+    render() {
+        return (
+            <div>
+                {/* <ExplanationsContainer /> */}
+                {this.props.explanations.map(exp => {
+                    return <ul>
+                        <li >{exp.categories} - {exp.keywords} - {exp.future_studies}</li>
+                        <button onClick={() => this.props.deleteExplanation(exp)}>Button</button>
+                    </ul>
+                })}
+            </div>
+        )
+    }
 }
 
 const mapDispatchToProps = dispatch => ({
