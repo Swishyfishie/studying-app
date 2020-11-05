@@ -19,9 +19,9 @@ const ExplanationsList = ({ explanations, deleteExplanation }) => {
 }
 
 
-// const mapDispatchToProps = dispatch => ({
-//     deleteExplanation: id => dispatch({ type: 'DELETE_EXPLANATION', id })
-// });
+const mapDispatchToProps = dispatch => ({
+    deleteExplanation: id => dispatch({ type: 'DELETE_EXPLANATION', id })
+});
 
 
 function mapStateToProps(state) {
