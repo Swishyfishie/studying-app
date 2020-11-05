@@ -22,28 +22,6 @@ export const addExplanation = (explanation) => {
 }
 
 
-// export const deleteExplanation = obj => dispatch => {
-//     console.log(obj.id)
-//     fetch(`http://localhost:3000/explanations/${obj.id}`, {
-//         method: "DELETE"
-//     })
-//         .then(res => dispatch({ type: "DELETE_EXPLANATION", payload: obj }))
-//         .catch(err => console.log(err))
-// }
-
-// export const deleteExplanation = (id) => {
-
-//     return (dispatch) => {
-//         fetch(`http://localhost:3000/explanations/${id}`, {
-//             method: 'DELETE'
-//         })
-//             .then(res => res.json())
-
-//             .then(exp => dispatch({ type: 'DELETE_EXPLANATION', exp }))
-//     }
-
-// }
-
 export const deleteExplanation = (id) => {
     return (dispatch) => {
         fetch("http://localhost:3000/explanations/" + id, {
