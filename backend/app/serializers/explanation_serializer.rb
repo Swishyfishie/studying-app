@@ -1,4 +1,4 @@
 class ExplanationSerializer < ActiveModel::Serializer
-  attributes :categories, :keywords, :future_studies
+  attributes :id, :categories, :keywords, :future_studies
   belongs_to :user
 end

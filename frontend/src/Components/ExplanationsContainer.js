@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchExplanations } from '../Actions/explanationsActions'
 import ExplanationForm from './ExplanationForm'
+import ExplanationsList from './ExplanationsList'
 
 export class ExplanationsContainer extends Component {
 
@@ -14,7 +15,7 @@ export class ExplanationsContainer extends Component {
         return (
             <div>
                 Explanation Container
-
+                <ExplanationsList />
                 <ExplanationForm />
             </div>
         )

@@ -1,16 +1,32 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { deleteExplanation } from '../Actions/explanationsActions'
+
 
 const ExplanationsList = ({ explanations }) => {
+
+
     return (
         <div>
-            {explanations.map(exp => <ul><li>{exp.categories} - {exp.keywords} - {exp.future_studies}</li></ul>)}
+            {/* <ExplanationsContainer /> */}
+            {explanations.map(exp => {
+                return <ul>
+                    <li >{exp.categories} - {exp.keywords} - {exp.future_studies}</li>
+                    <button onClick={() => deleteExplanation(exp)}>Button</button>
+                </ul>
+            })}
         </div>
     )
 }
 
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => ({
+    deleteExplanation: obj => dispatch({ type: 'DELETE_EXPLANATION', obj })
+});
+
+
+function mapStateToProps(state) {
     return { explanations: state.explanations }
 }
 
-export default connect(mapStateToProps)(ExplanationsList)
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExplanationsList)

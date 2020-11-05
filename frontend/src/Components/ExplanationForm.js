@@ -24,6 +24,8 @@ class ExplanationForm extends Component {
         e.target.reset()
     }
 
+
+
     render() {
         return (
 
