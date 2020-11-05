@@ -8,7 +8,7 @@ export const explanationsReducer = (state = [], action) => {
 
             return [...state, action.payload]
         case 'DELETE_EXPLANATION':
-            return state.filter(exp => exp.id !== action.id);
+            return state.filter(exp => exp.id !== action.payload.id);
 
         default:
             return state

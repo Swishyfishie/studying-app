@@ -45,7 +45,6 @@ export const addExplanation = (explanation) => {
 // }
 
 export const deleteExplanation = (id) => {
-    debugger
     return (dispatch) => {
         fetch("http://localhost:3000/explanations/" + id, {
             method: "DELETE",

@@ -37,6 +37,7 @@ class ExplanationsController < ApplicationController
   # DELETE /explanations/1
   def destroy
     @explanation.destroy
+    render json: @explanation
   end
 
   private
