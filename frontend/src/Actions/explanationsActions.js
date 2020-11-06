@@ -33,8 +33,6 @@ export const deleteExplanation = (id) => {
 };
 
 export const updateExplanation = (obj) => {
-
-
     return (dispatch) => {
         debugger
         fetch("http://localhost:3000/explanations/" + obj.id, {
