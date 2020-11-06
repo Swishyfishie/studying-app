@@ -1,15 +1,28 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addExplanation } from '../Actions/explanationsActions'
+
+
 class ExplanationForm extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            explanation: {
-                categories: "",
-                keywords: "",
-                future_studies: ""
-            }
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         users,
+    //         explanation: {
+    //             categories: "",
+    //             keywords: "",
+    //             future_studies: ""
+    //         }
+    //     }
+
+    // }
+
+    state = {
+        users: [],
+        explanations: {
+            categories: "",
+            keywords: "",
+            future_studies: ""
         }
     }
 
@@ -28,19 +41,28 @@ class ExplanationForm extends Component {
 
     render() {
         return (
+            <div className="row">
+                <form onSubmit={this.handleSubmit} className="col s12">
+                    <div className="row">
+                        <div className="input-field col s10">
+                            <label htmlFor="categories">Category</label>
+                            <input type="text" value={this.state.categories} onChange={this.handleChange} name="categories" />
+                        </div>
+                        <div className="input-field col s10">
+                            <label htmlFor="keywords">Keywords</label>
+                            <input type="text" value={this.state.keywords} onChange={this.handleChange} name="keywords" />
+                        </div>
 
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="categories">Category</label>
-                <input type="text" value={this.state.categories} onChange={this.handleChange} name="categories" />
-                <br />
-                <label htmlFor="keywords">Keywords</label>
-                <input type="text" value={this.state.keywords} onChange={this.handleChange} name="keywords" />
-                <br />
-                <label htmlFor="future_studies">Future Studies</label>
-                <input type="text" value={this.state.future_studies} onChange={this.handleChange} name="future_studies" />
-                <br />
-                <input type="submit" value="Add Explanation" />
-            </form>
+                        <div className="input-field col s10">
+                            <label htmlFor="future_studies">Future Studies</label>
+                            <input type="text" value={this.state.future_studies} onChange={this.handleChange} name="future_studies" />
+                        </div>
+
+                        <input type="submit" value="Add Explanation" />
+
+                    </div>
+                </form>
+            </div>
 
         )
     }

@@ -32,14 +32,17 @@ export const deleteExplanation = (id) => {
     };
 };
 
-export const updateExplanation = obj => {
+export const updateExplanation = (obj) => {
+
+
     return (dispatch) => {
+        debugger
         fetch("http://localhost:3000/explanations/" + obj.id, {
             method: 'PUT',
             headers: { "Content-Type": 'application/json' },
             body: JSON.stringify(obj)
         })
             .then(resp => resp.json())
-            .then(explanation => dispatch({ type: "UPDATE_EXPLANATION", payload: explanation }))
+            .then(exp => dispatch({ type: "UPDATE_EXPLANATION", payload: exp }))
     }
 }
