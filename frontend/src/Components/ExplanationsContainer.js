@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchExplanations } from '../Actions/explanationsActions'
+import { fetchUsers } from '../Actions/usersActions'
 import ExplanationForm from './ExplanationForm'
 import ExplanationsList from './ExplanationsList'
 
@@ -9,6 +10,7 @@ export class ExplanationsContainer extends Component {
 
     componentDidMount() {
         this.props.fetchExplanations()
+        this.props.fetchUsers()
     }
 
     render() {
@@ -22,7 +24,7 @@ export class ExplanationsContainer extends Component {
     }
 }
 
-export default connect(null, { fetchExplanations })(ExplanationsContainer)
+export default connect(null, { fetchExplanations, fetchUsers })(ExplanationsContainer)
 
 
 

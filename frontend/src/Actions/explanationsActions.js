@@ -31,3 +31,15 @@ export const deleteExplanation = (id) => {
             .then((id) => dispatch({ type: "DELETE_EXPLANATION", payload: id }));
     };
 };
+
+export const updateExplanation = obj => {
+    return (dispatch) => {
+        fetch("http://localhost:3000/explanations/" + obj.id, {
+            method: 'PUT',
+            headers: { "Content-Type": 'application/json' },
+            body: JSON.stringify(obj)
+        })
+            .then(resp => resp.json())
+            .then(explanation => dispatch({ type: "UPDATE_EXPLANATION", payload: explanation }))
+    }
+}
