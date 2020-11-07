@@ -38,11 +38,12 @@ class ExplanationsList extends React.Component {
             <ul>
                 {
                     this.props.explanations.map(exp => {
+
                         // this.state.explanations.push(exp)
                         return <li key={exp.id} data-key={exp.id}>
-                            <p className="category" name="category" value={exp.category} onClick={this.handleClick} onKeyDown={this.handleKeyDown}>{exp.categories}</p>
-                            <p className="keywords" name="keywords" value={exp.keywords} onClick={this.handleClick} onKeyDown={this.handleKeyDown}>{exp.keywords}</p>
-                            <p className="future_studies" name="future_studies" value={exp.future_studies} onClick={this.handleClick} onKeyDown={this.handleKeyDown}>{exp.future_studies}</p>
+                            <p >{exp.description}</p>
+                            <p >{exp.future_studies}</p>
+                            <p >Tags: {exp.tag_list.map(tag => <p>{tag} </p>)}</p>
                             <button onClick={() => this.props.deleteExplanation(exp.id)}>Delete</button>
                         </li>
                     })
