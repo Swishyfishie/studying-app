@@ -19,10 +19,10 @@ class ExplanationForm extends Component {
 
     state = {
         users: [],
+        categories: [],
         explanations: {
-            categories: "",
-            keywords: "",
-            future_studies: ""
+            description: "",
+            tag_list: "",
         }
     }
 

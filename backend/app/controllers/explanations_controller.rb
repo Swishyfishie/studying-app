@@ -48,6 +48,6 @@ class ExplanationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def explanation_params
-      params.require(:explanation).permit(:id, :description, :future_studies, :tag_list)
+      params.require(:explanation).permit(:id, :description, :category, :tag_list)
     end
 end
