@@ -42,7 +42,6 @@ class ExplanationsList extends React.Component {
                         // this.state.explanations.push(exp)
                         return <li key={exp.id} data-key={exp.id}>
                             <p >{exp.description}</p>
-                            <p >{exp.future_studies}</p>
                             <p >Tags: {exp.tag_list.map(tag => <p>{tag} </p>)}</p>
                             <button onClick={() => this.props.deleteExplanation(exp.id)}>Delete</button>
                         </li>
